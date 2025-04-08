@@ -18,15 +18,27 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-// CORS Configuration
+//... other imports.
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://jayjobs.netlify.app'
+];
+
 const corsOptions = {
-  origin: process.env.ALLOWED_ORIGINS,
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: true
 };
+
 app.use(cors(corsOptions));
-// app.options('*', cors(corsOptions));
 
 // Rate Limiting
 const limiter = rateLimit({
