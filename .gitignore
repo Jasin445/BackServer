@@ -1,0 +1,48 @@
+# Environment files
+jayjob-e22e5-firebase-adminsdk-fbsvc-d454e44a76.json
+.env
+.env.*
+.env.local
+
+# Credential files
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials.json
+serviceAccount.json
+*.json # Catches any .json file, potentially containing credentials
+*password* # Catches filenames with "password"
+*secret* # Catches filenames with "secret"
+*token* # Catches filenames with "token"
+*api_key* # Catches filenames with "api_key"
+
+# Database files
+*.sqlite
+*.db
+*.sql
+
+# Log files
+*.log
+logs/
+
+# Build artifacts
+dist/
+build/
+node_modules/
+
+# Temporary files
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.idea/
+.vscode/
+
+# Configuration Folders
+config/
+secrets/
