@@ -62,6 +62,12 @@ const otpStorage = {};
 const generateOTP = () => Math.floor(1000 + Math.random() * 9000).toString();
 
 // Routes
+
+app.get('/', (req, res) => {
+    res.send('Hello from your Node.js server!');
+  });
+  
+
 app.post('/api/send-otp', async (req, res) => {
   const { email, action = 'verify' } = req.body;
 
