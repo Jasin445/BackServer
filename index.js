@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 const admin = require('firebase-admin');
 
 // Initialize Firebase Admin
-const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT);
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: `https://${serviceAccount.project_id}.firebaseio.com`
