@@ -22,7 +22,8 @@ app.use(express.json());
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://jayjobs.netlify.app'
+  'https://jayjobs.netlify.app',
+  'https://staging-jayjobs.netlify.app'
 ];
 
 const corsOptions = {
